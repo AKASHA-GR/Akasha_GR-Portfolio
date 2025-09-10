@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKASHA G R - Professional Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">🌙 Dark</button>
+            <div class="header-content">
+                <div class="avatar">
+                    <img src="assets/akashaaa.jpg" alt="Profile photo of Akasha G R">
+                </div>
+                <h1>AKASHA G R</h1>
+                <div class="subtitle">Computer Science Engineering Student</div>
+                <div class="location">Chitradurga, Karnataka, India</div>
+            </div>
+            <div class="header-actions">
+                <a class="resume-btn" href="assets/Akasha_GR_Resume.pdf" download>
+                    ⬇️ Download Resume
+                </a>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#about" data-section="about">About</a></li>
+                <li><a href="#skills" data-section="skills">Skills</a></li>
+                <li><a href="#projects" data-section="projects">Projects</a></li>
+                <li><a href="#contact" data-section="contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section class="section" id="about">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="education-container">
+                    <h3 style="color: var(--text-primary); margin-bottom: 30px; font-size: 1.4rem; font-weight: 600;">
+                        Education</h3>
+                    <div class="education-item">
+                        <div class="degree">Bachelor of Engineering - Computer Science</div>
+                        <div class="institution">Government Engineering College, Challakere<br>Chitradurga District
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="degree">Pre-University Course (PUC)</div>
+                        <div class="institution">RockFort PUC College, Chitradurga</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="degree">Secondary School Leaving Certificate (SSLC)</div>
+                        <div class="institution">Government High School, Sidyanakotte<br>Molakalmuru Taluk</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="interests">
+                        <h3
+                            style="color: var(--text-primary); margin-bottom: 20px; font-size: 1.4rem; font-weight: 600;">
+                            Areas of Interest</h3>
+                        <p>I am passionate about modern web development technologies and cloud computing solutions. My
+                            focus areas include:</p>
+                        <ul>
+                            <li>Frontend Development</li>
+                            <li>Backend Development</li>
+                            <li>Cloud Development</li>
+                        </ul>
+                        <p style="margin-top: 20px; font-style: italic; color: var(--text-secondary);">
+                            "Committed to continuous learning and taking on challenging projects that push the
+                            boundaries of technology."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Technical Skills</h3>
+                    <div class="chips">
+                        <span class="chip">Python</span>
+                        <span class="chip">JavaScript</span>
+                        <span class="chip">HTML/CSS</span>
+                        <span class="chip">React</span>
+                        <span class="chip">Tailwind CSS</span>
+                        <span class="chip">Cybersecurity (Basics)</span>
+                        <span class="chip">Data Analysis</span>
+                        <span class="chip">Web Development</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools & Platforms</h3>
+                    <div class="chips">
+                        <span class="chip">MS 365</span>
+                        <span class="chip">Power BI</span>
+                        <span class="chip">Tableau</span>
+                        <span class="chip">Windows</span>
+                        <span class="chip">Linux (Basics)</span>
+                        <span class="chip">Django</span>
+                        <span class="chip">Git</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Soft Skills</h3>
+                    <div class="chips">
+                        <span class="chip">Communication</span>
+                        <span class="chip">Teamwork</span>
+                        <span class="chip">Problem-solving</span>
+                        <span class="chip">Adaptability</span>
+                        <span class="chip">Time Management</span>
+                        <span class="chip">Critical Thinking</span>
+                        <span class="chip">Creativity</span>
+                        <span class="chip">Leadership</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project">
+                    <span class="project-type">Mini Project</span>
+                    <h3>Inventory Management System</h3>
+                    <p>Developed a comprehensive web application for inventory management with features including item
+                        tracking, stock level monitoring, and automated report generation. The system provides real-time
+                        insights for business decision-making and streamlines inventory operations.</p>
+                    <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
+                        <button class="btn" data-modal-target="#modal-inventory">View Details</button>
+                        <a class="btn" href="https://github.com/AKASHA-GR" target="_blank">Source</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <span class="project-type major">Major Project</span>
+                    <h3>AI-Powered Game Development</h3>
+                    <p>Created an interactive gaming platform featuring artificial intelligence opponents with multiple
+                        difficulty levels and game modes. The application demonstrates advanced programming concepts
+                        including AI algorithms, user interface design, and responsive gameplay mechanics.</p>
+                    <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
+                        <button class="btn" data-modal-target="#modal-ai-game">View Details</button>
+                        <a class="btn" href="https://github.com/AKASHA-GR" target="_blank">Source</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact" id="contact">
+            <h2>Professional Contact</h2>
+            <p>I welcome opportunities to discuss potential collaborations, internships, or full-time positions in
+                software development and technology roles.</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h4>Phone</h4>
+                    <p>+91 9353220519</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p><a href="mailto:akashmlk2021@gmail.com">akashmlk2021@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>LinkedIn</h4>
+                    <p><a href="https://www.linkedin.com/in/akasha-g-r-8b0b25232/" target="_blank">Professional
+                            Profile</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>GitHub</h4>
+                    <p><a href="https://github.com/AKASHA-GR" target="_blank">Code Repository</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Send a Message</h4>
+                    <form id="contactForm">
+                        <input id="name" name="name" type="text" placeholder="Your Name" required>
+                        <input id="email" name="email" type="email" placeholder="Your Email" required>
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        <button id="contactSubmit" type="submit">Send</button>
+                        <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Akasha G R. All rights reserved. | Professional Portfolio</p>
+    </footer>
+
+    <!-- Project Modals -->
+    <div id="modal-inventory" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-inventory-title">
+        <div class="modal-overlay" data-modal-close></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-inventory-title">Inventory Management System</h3>
+                <button class="modal-close" aria-label="Close" data-modal-close>&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?q=80&w=1200&auto=format&fit=crop"
+                    alt="Inventory Management Screenshot">
+                <div>
+                    <p style="color: var(--text-secondary); margin-bottom: 8px;">Tech stack: Django, PostgreSQL,
+                        Bootstrap</p>
+                    <p>Features: item CRUD, stock alerts, CSV import/export, role-based authentication, and analytics
+                        dashboards.</p>
+                    <div class="modal-links">
+                        <a class="btn" href="https://github.com/AKASHA-GR" target="_blank">Source Code</a>
+                        <a class="btn" href="#" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-ai-game" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-ai-game-title">
+        <div class="modal-overlay" data-modal-close></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-ai-game-title">AI-Powered Game Development</h3>
+                <button class="modal-close" aria-label="Close" data-modal-close>&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop"
+                    alt="AI Game Screenshot">
+                <div>
+                    <p style="color: var(--text-secondary); margin-bottom: 8px;">Tech stack: React, Node.js, WebGL</p>
+                    <p>Highlights: minimax with alpha-beta pruning, difficulty scaling, responsive UI, and performance
+                        optimizations.</p>
+                    <div class="modal-links">
+                        <a class="btn" href="https://github.com/AKASHA-GR" target="_blank">Source Code</a>
+                        <a class="btn" href="#" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
