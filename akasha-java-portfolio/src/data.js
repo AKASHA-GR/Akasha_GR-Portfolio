@@ -1,5 +1,6 @@
 export const profile = {
   name: 'AKASHA G R',
+  avatar: '/profile.jpg',
   github: 'https://github.com/AKASHA-GR',
   linkedin: 'https://www.linkedin.com/in/akasha-gr/',
   email: 'akashmlk2021@gmail.com',

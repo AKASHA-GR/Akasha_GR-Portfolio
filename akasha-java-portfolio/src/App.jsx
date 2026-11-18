@@ -81,7 +81,23 @@ function ProjectVisual({ project }) {
 }
 
 function App() {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState(() => {
+    try {
+      const saved = localStorage.getItem('theme')
+      if (saved) return saved
+      return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+    } catch {
+      return 'dark'
+    }
+  })
+
+  function handleSetTheme(newTheme) {
+    setTheme(newTheme)
+    try {
+      localStorage.setItem('theme', newTheme)
+    } catch {}
+  }
+
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
   const [submitting, setSubmitting] = useState(false)
   const [sent, setSent] = useState(false)
@@ -135,11 +151,16 @@ function App() {
   }
 
   return <div className={`app ${theme}`}>
-    <Header theme={theme} setTheme={setTheme}/>
+    <Header theme={theme} setTheme={handleSetTheme}/>
     <main>
       <section id="home" className="hero section-shell">
         <div className="hero-copy">
-          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="availability"><span className="pulse-dot"/> OPEN TO ENTRY-LEVEL OPPORTUNITIES</motion.div>
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="hero-status-row">
+            {profile.avatar && (
+              <img src={profile.avatar} alt={profile.name} className="hero-avatar-thumb" />
+            )}
+            <div className="availability"><span className="pulse-dot"/> OPEN TO ENTRY-LEVEL OPPORTUNITIES</div>
+          </motion.div>
           <motion.p initial="hidden" animate="visible" variants={fadeUp} className="hero-kicker">JAVA FULL STACK DEVELOPER <span> / </span> 2026 GRADUATE</motion.p>
           <motion.h1 initial="hidden" animate="visible" variants={fadeUp}>Building scalable applications with <em>Java</em> & modern web technologies<span className="blue-period">.</span></motion.h1>
           <motion.p initial="hidden" animate="visible" variants={fadeUp} className="hero-subtitle">Java Full Stack Developer <b>·</b> Backend Development <b>·</b> Problem Solver</motion.p>
@@ -168,7 +189,20 @@ function App() {
       <section id="about" className="section-shell section-block">
         <SectionHeading eyebrow="01 / ABOUT" title="A developer in progress. A builder by mindset." text="I enjoy understanding how applications work behind the scenes and turning ideas into practical software."/>
         <div className="about-grid">
-          <div className="about-main glass-card"><div className="about-icon"><Terminal/></div><h3>From computer science fundamentals to full-stack applications.</h3><p>I’m a 2026 Computer Science Engineering graduate focused on Java backend and full-stack development. My learning journey has been centred on writing structured Java code, connecting applications to databases, and understanding how web applications are built end to end.</p><p>I value strong fundamentals, clear problem-solving and continuous improvement. I’m actively strengthening my Spring Boot and React skills while building practical projects that help me apply what I learn.</p></div>
+          <div className="about-main glass-card">
+            <div className="about-header">
+              {profile.avatar && (
+                <div className="about-avatar-wrap">
+                  <img src={profile.avatar} alt={profile.name} className="about-avatar-img" />
+                  <span className="avatar-status-badge"><span className="pulse-dot"/> Open to Work</span>
+                </div>
+              )}
+              <div className="about-icon"><Terminal/></div>
+            </div>
+            <h3>From computer science fundamentals to full-stack applications.</h3>
+            <p>I’m a 2026 Computer Science Engineering graduate focused on Java backend and full-stack development. My learning journey has been centred on writing structured Java code, connecting applications to databases, and understanding how web applications are built end to end.</p>
+            <p>I value strong fundamentals, clear problem-solving and continuous improvement. I’m actively strengthening my Spring Boot and React skills while building practical projects that help me apply what I learn.</p>
+          </div>
           <div className="about-facts">
             <div className="fact-card"><GraduationCap/><span>EDUCATION</span><b>B.E. Computer Science Engineering</b><small>2026 Graduate</small></div>
             <div className="fact-card"><Code2/><span>CORE FOCUS</span><b>Java Backend Development</b><small>OOP · JDBC · Spring MVC</small></div>
@@ -179,7 +213,7 @@ function App() {
 
       <section id="skills" className="section-shell section-block">
         <SectionHeading eyebrow="02 / TOOLKIT" title="Technologies I work with." text="A practical toolkit built through focused learning and hands-on development. Learning areas are labelled clearly."/>
-        <div className="skills-grid">{skillGroups.map((group, i) => { const Icon = icons[group.icon]; return <motion.article key={group.title} className="skill-card glass-card" initial="hidden" whileInView="visible" viewport={{ once: true, amount: .2 }} variants={fadeUp} transition={{ delay: i * .06 }}><div className="skill-card-head"><span className="skill-icon"><Icon size={19}/></span><h3>{group.title}</h3></div><div className="skill-tags">{group.items.map(item => { const obj = typeof item === 'string' ? { name: item } : item; return <span className="skill-tag" key={obj.name}>{obj.name}{obj.note && <small>{obj.note}</small>}</span> })}</div></motion.article> })}</div>
+        <div className="skills-grid">{skillGroups.map((group, i) => { const Icon = icons[group.icon] || Code2; return <motion.article key={group.title} className="skill-card glass-card" initial="hidden" whileInView="visible" viewport={{ once: true, amount: .2 }} variants={fadeUp} transition={{ delay: i * .06 }}><div className="skill-card-head"><span className="skill-icon"><Icon size={19}/></span><h3>{group.title}</h3></div><div className="skill-tags">{group.items.map(item => { const obj = typeof item === 'string' ? { name: item } : item; return <span className="skill-tag" key={obj.name}>{obj.name}{obj.note && <small>{obj.note}</small>}</span> })}</div></motion.article> })}</div>
         <p className="skills-note"><span className="learning-dot"/> “Learning” and “Basic” labels indicate areas currently being developed, not expert-level proficiency.</p>
       </section>
 
